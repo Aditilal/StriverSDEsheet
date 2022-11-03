@@ -1,0 +1,19 @@
+#include <bits/stdc++.h> 
+#include <bits/stdc++.h> 
+vector<vector<long long int>> printPascal(int n) 
+{
+  // Write your code here.
+    vector<vector<long long int>> answer(n);
+    for(int i=0;i<n;i++)
+    {
+        answer[i].resize(i+1);
+        answer[i][0]=answer[i][i]=1;
+        for(int j=1;j<i;j++)
+        {
+            answer[i][j]=answer[i-1][j-1]+answer[i-1][j];
+        }
+    }
+    return answer;
+}
+
+TimeComplexity and SpaceComplexity: O(n^2)
