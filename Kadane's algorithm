@@ -1,0 +1,29 @@
+#include <bits/stdc++.h> 
+long long maxSubarraySum(int arr[], int n)
+{
+   long long ans=0;
+    long  long sum=0;
+    //vector<int> subarray(2)={0};
+    for(int i=0;i<n;i++)
+    { 
+        if(sum<0)
+        {
+            sum=0;
+            //s=i+1;
+        }
+        sum+=arr[i];
+        
+        if(sum>ans)
+        {
+            ans=sum;
+            //subarray.clear();
+            //subarray.push_back(s);
+            //subarray.push_back(i);
+            
+        }
+        
+        
+    }
+    return ans;
+    //print from subarray[0]->subarray[1] in arr;
+}
